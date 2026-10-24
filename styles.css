@@ -30,3 +30,13 @@ button.release{font:inherit;background:var(--gold);color:var(--ink);border:2px s
 button.release:hover{background:var(--amber)}a{color:var(--ink)}
 @media(max-width:760px){.wrap{grid-template-columns:1fr}.hero{position:static}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:.4rem 0 1rem}
+.tab{font:inherit;background:var(--lav);color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:.35rem .9rem;cursor:pointer}
+.tab.on{background:var(--gold);font-weight:bold}
+.panel{display:none}
+.panel.on{display:block;animation:fade .4s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}}
+.panel h4{margin:.8rem 0 .1rem;font-size:1.05rem}
+.meta{margin:0 0 .4rem;font-size:.88rem;opacity:.8}
+
