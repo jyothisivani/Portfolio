@@ -12,3 +12,7 @@ if(sun)sun.addEventListener('click',()=>{document.body.classList.add('leaving');
 const btn=document.getElementById('release'),cnt=document.getElementById('count');
 if(btn){let n=0;try{n=+localStorage.getItem('lanterns')||0}catch(e){}cnt.textContent=n;
   btn.addEventListener('click',()=>{n++;cnt.textContent=n;try{localStorage.setItem('lanterns',n)}catch(e){}for(let i=0;i<3;i++)setTimeout(()=>lantern(30+Math.random()*40),i*200);});}
+
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab,.panel').forEach(e=>e.classList.remove('on'));
+  t.classList.add('on');document.getElementById(t.dataset.tab).classList.add('on');}));
